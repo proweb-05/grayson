@@ -1,0 +1,501 @@
+@import url(./fonts.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    font-family: "Roboto";
+}
+
+.container {
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.box {
+    width: 80%;
+    background: blue;
+    height: 200px;
+    position: relative;
+}
+
+.item {
+    width: 100px;
+    height: 100px;
+    background: red;
+    /* left: 50px; */
+    right: 50px;
+    /* top: 50px; */
+    bottom: 50px;
+    /* position: relative; */
+    /* position: absolute; */
+    position: fixed;
+}
+
+.nav {
+    padding: 25px 0;
+    position: relative;
+}
+
+.nav__burger {
+    border: none;
+    outline: none;
+    background: #41A28E;
+    color: #fff;
+    padding: 10px;
+    font-size: 20px;
+    display: none;
+}
+
+.nav__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__list {
+    display: flex;
+    font-family: "Playfair";
+    gap: 40px;
+    font-size: 12px;
+}
+
+.dropdown {
+    position: absolute;
+    left: 0;
+    border: 1px solid #E5E5E5;
+    border-radius: 2px;
+    min-width: 160px;
+    top: 100%;
+    opacity: 0;
+    transition: 0.5s;
+    z-index: -1;
+    background: #fff;
+}
+
+.nav__item {
+    position: relative;  
+    padding: 12px 0;  
+}
+
+.dropdown__link {
+    padding: 12px 30px;
+    display: block;
+    position: relative;    
+}
+
+.dropdown__link::after {
+    content: '';
+    height: 1px;
+    width: 100%;
+    background: #E5E5E5;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.dropdown__item:last-of-type .dropdown__link::after {
+    display: none;
+}
+
+.nav__item:hover .dropdown {
+    opacity: 1;
+    z-index: 1;
+}
+
+.nav__icon {
+    transition: 0.5s;
+}
+
+.nav__item:hover .nav__icon {
+    transform: rotate(180deg);
+}
+
+.nav__input {
+    border: 1px solid #41A28E;
+    outline: none;
+    padding: 6px 12px;
+    color: #4B4848;
+    font-family: "Roboto";
+    font-size: 14px;
+    max-width: 180px;
+    width: 100%;
+}
+
+.nav__input::placeholder {
+    color: #4B4848;
+}
+
+.nav__button {
+    background: #41A28E;
+    border: none;
+    color: #fff;
+    padding: 7px;
+    font-size: 14px;
+}
+
+.nav__search {
+    display: flex;
+    gap: 4px;
+}
+
+.header__content {
+    /* background-image: url(../img/header-bg.jpg);
+    background-size: cover;
+    background-position: center; */
+    background: url(../img/header-bg.jpg) center / cover no-repeat;
+    flex-grow: 1;
+    color: #fff;
+    font-family: "Playfair";
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header__title {
+    font-weight: 400;
+    font-size: 50px;
+    background: rgba(0, 0, 0, 0.70);
+    padding: 16px 61px;
+    margin-bottom: 30px;
+}
+
+.header__desc {
+    font-size: 22px;
+    /* text-shadow: -50px -20px 0px #00f; */
+    /* box-shadow: -20px -30px 50px 20px #000; */
+    text-shadow: 6px 6px 5px rgba(0, 0, 0, 0.38);
+    margin-bottom: 50px;
+}
+
+.header__link {
+    color: #000;
+    font-size: 12px;
+    background: #fff;
+    padding: 21px 34px;
+    transition: 0.5s;
+}
+
+.header__link:hover {
+    background: #41A28E;
+    color: #fff;
+}
+
+.ecom {
+    padding-top: 48px;
+    padding-bottom: 72px;
+}
+
+.ecom__card {
+    border: 1px solid #41A28E;
+    max-width: 255px;
+    width: 100%;
+    height: 170px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ecom__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ecom__title {
+    position: absolute;
+    left: 0;
+    bottom: -50%;
+    font-family: "Playfair";
+    font-weight: 400;
+    color: #fff;
+    background: rgba(75, 72, 72, 0.7);
+    width: 100%;
+    text-align: center;
+    padding: 3px;
+    font-size: 25px;
+    transition: 0.5s;
+}
+
+.ecom__card:hover .ecom__title {
+    bottom: 0;
+}
+
+.ecom__content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    /* flex-wrap: wrap; */
+    margin-bottom: 52px;
+}
+
+.info {
+    max-width: 496px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.info__title {
+    font-size: 50px;
+    font-family: "Playfair";
+    font-weight: 400;
+    padding-bottom: 18px;
+}
+
+.info__desc {
+    color: #666;
+}
+
+.coll {
+    background: url(../img/jacket.jpg) no-repeat center / cover;
+    background-attachment: fixed;
+    padding-top: 120px;
+    padding-bottom: 112px;
+    color: #fff;
+    font-family: "Playfair";
+}
+
+.coll__desc {
+    font-size: 20px;
+    margin-bottom: 3px;
+}
+
+.coll__title {
+    font-size: 50px;
+    font-weight: 400;
+    margin-bottom: 22px;
+}
+
+.coll__link {
+    background: #fff;
+    font-size: 12px;
+    padding: 18px 42px;
+    text-transform: uppercase;
+    color: #000;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+.coll__link:hover {
+    background: #41A28E;
+    color: #fff;
+}
+
+.custom {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.custom__card {
+    max-width: 255px;
+    width: 100%;
+    font-family: "Playfair";
+}
+
+.custom__wrapper {
+    height: 340px;
+    overflow: hidden;
+    position: relative;
+}
+
+.custom__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.custom__icons {
+    position: absolute;
+    left: 0;
+    bottom: -50%;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    padding: 16px 20px;
+    color: #fff;
+    display: flex;
+    gap: 23px;
+    transition: 0.5s;
+}
+
+.custom__card:hover .custom__icons {
+    bottom: 0;
+}
+
+.custom__add {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 12px;
+}
+
+.custom__like {
+    margin-left: auto;
+}
+
+.custom__sale {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #4B484B;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 10px 18px 6px 18px;
+    font-size: 12px;
+    font-family: "Roboto";
+}
+
+.custom__title {
+    font-size: 22px;
+    font-weight: 400;
+    margin-top: 43px;
+}
+
+.custom__desc {
+    margin-top: 6px;
+    font-size: 18px;
+    display: flex;
+    gap: 15px;
+}
+
+.custom__desc span {
+    color: #666666;
+    text-decoration: line-through;
+}
+
+.custom__content {
+    display: flex;
+    gap: 30px;
+    margin-top: 69px;
+}
+
+.footer {
+    background: #000;
+    color: #fff;
+    padding-top: 36px;
+}
+
+.footer__copy {
+    background: #121212;
+    padding: 40px;
+    text-align: center;
+    color: #666;
+    margin-top: 36px;
+}
+
+.footer__copy span {
+    text-shadow: 0 0 4px #e52d27;
+}
+
+.footer__content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer__card {
+    max-width: 255px;
+    width: 100%;
+}
+
+.footer__title {
+    font-family: "Playfair";
+    font-weight: 400;
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.footer__menu {
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 10px;
+}
+
+.footer__menu_gap {
+    gap: 13px;
+}
+
+.footer__menu i {
+    font-size: 21px;
+    margin-right: 10px;
+}
+
+.footer__link {
+    display: flex;
+    align-items: center;
+}
+
+.footer__form {
+    display: flex;
+}
+
+.footer__form * {
+    border: none;
+    outline: none;
+    font-family: "Roboto";
+}
+
+.footer__input {
+    max-width: 200px;
+    width: 100%;
+    padding: 14px 10px;
+    font-size: 14px;
+}
+
+.footer__input::placeholder {
+    color: #909090;
+}
+
+.footer__btn {
+    background: #41A28E;
+    color: #fff;
+    font-size: 16px;
+    padding: 12px 10px;
+    cursor: pointer;
+}
+
+.footer__desc {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.footer__service {
+    gap: 25px;
+    display: flex;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #41A28E;
+    border-radius: 8px;
+}
